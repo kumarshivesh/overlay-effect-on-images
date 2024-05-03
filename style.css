@@ -35,6 +35,10 @@ main section {
   margin: 20px 0 50px 0;
 }
 
+.why {
+  color: rgba(62, 67, 123, 1);
+}
+
 .images-container{
   margin-block: 10px;
   display: flex;
@@ -60,14 +64,45 @@ main section {
   overflow: hidden; 
 }
 
+.imageDiv .bottomTitle {
+  display: none;
+  position: absolute;
+  bottom: 15px;
+  color: #ffffff;
+  font-size: 25px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageDiv:not(:hover) .bottomTitle {
+  display: block; 
+}
+
 .imageDiv .overlay{
   position: absolute;
   left: 0;
   bottom: 15px;
-  width: 100%;
+  width: 0;
   height: 0;
   background-color: rgba(62, 67, 123,0.7);
-  transition: height 0.3s ease;
+  transition: all 0.2s ease-out;
+}
+
+.imageDiv:hover .overlay{
+  width: 100%;
+  height: 90%;
+}
+
+.overlay-text {
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+  height: 90%;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,41 +110,30 @@ main section {
   gap: 10px;
 }
 
-.imageDiv:hover .overlay{
-  height: 90%;
-}
-
-.imageDiv .overlay h2{
+.imageDiv .overlay-text h2{
   color: #ffffff;
   display: none;
   text-align: center;
   font-size: 25px;
 }
 
-.imageDiv:hover .overlay h2{
+.imageDiv:hover .overlay-text h2{
   display: block;
 }
 
-
-.imageDiv:not(:hover) .overlay h2 {
-  display: block; /* Display the title when not hovering */
-  position: absolute; 
-  bottom: 0px;
-}
-
-.imageDiv .overlay h3{
+.imageDiv .overlay-text h3{
   color: #ffffff;
   display: none;
   text-align: center;
   font-size: 15px;
+  margin-inline: 8px;
   font-weight: 50;
   font-family: 'Gotham Light';
 }
 
-.imageDiv:hover .overlay h3{
+.imageDiv:hover .overlay-text h3{
   display: block;
 }
-
 
 
 
